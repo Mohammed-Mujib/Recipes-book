@@ -22,17 +22,16 @@ body{
     background-color: var(--background);
     font-family: "Lato", sans-serif;
 }
-
+body *::selection{
+    color: var(--accent);
+    background-color: var(--main);
+}
 .navbar{
     background-color: var(--accent);
     overflow: hidden;
 }
 .navbar-brand{
     color: var(--text);
-}
-.navbar *::selection{
-    color: var(--accent);
-    background-color: var(--main);
 }
 .nav-item{
     overflow: hidden;
@@ -43,30 +42,6 @@ body{
 .nav-link:hover {
     color: var(--main);
 }
-/* .nav-link::after{
-    content: "";
-    transition: .3s;
-    border-top: 8px solid transparent;
-    border-left: 8px solid transparent;
-    border-right: 8px solid  transparent;
-    border-bottom: 8px solid var(--main);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,100%);
-}
-.nav-link::before{
-    content: "";
-    transition: .3s;
-    border-top: 8px solid var(--main);
-    border-left: 8px solid transparent;
-    border-right: 8px solid  transparent;
-    border-bottom: 8px solid transparent;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%,-100%);
-} */
 .nav-link::after ,
 .nav-link::before{
     content: "";
@@ -88,14 +63,9 @@ body{
     top: 0;
     transform: translate(-50%,-100%);
 }
-.nav-link:hover.nav-link::after,.nav-link:hover.nav-link::before{
+.nav-link:hover.nav-link::after,
+.nav-link:hover.nav-link::before{
     transform: translate(-50%,0%);
-}
-/* .nav-link:hover.nav-link::before{
-    transform: translate(-50%,0%);
-} */
-.pannar .text-head *::selection{
-    background-color: var(--main);
 }
 .pannar .text-head {
     color: var(--accent);
@@ -121,18 +91,14 @@ body{
 }
 .search{
     position: absolute;
-    /* bottom: -60%; */
     top: 100%;
     left: 50%;
-    width: 90%;
-    /* background-color: var(--accent); */
-    
+    width: 90%;    
     transform: translate(-50%);
 }
 #searchWords{
     max-height: 300px;
     background-color: var(--accent);
-    /* border: 2px solid var(--text-light); */
     box-shadow: 0px 0px 30px 0px hsla(0, 0%, 53%, 0.756);
 }
 #searchWords li{
@@ -141,31 +107,39 @@ body{
     transition: .2s;
 }
 #searchWords li:hover{
-    /* cursor: pointer; */
+    cursor: pointer;
     color: var(--main);
     padding-left: 30px !important;
-    /* border-bottom: 1px solid var(--accent-dark); */
 }
-
 .row .img-holder {
     width: 100%;
+    min-height: 250px;
     max-height: 250px;
     overflow: hidden !important;
 }
 .row div img{
     width: 100%;
+    cursor: pointer;
 }
 .error{
     border-radius: 25px !important;
     padding: 10px 20px !important;
     background-color:#ffcc99 !important ;
-    /* color:#FF7629 !important; */
     color: var(--text);
     position: absolute;
     top: 100%;
     left: 50%;
     width: 80% !important;
     transform: translate(-50%);
+}
+/* #data{
+    align-content: stretch !important;
+} */
+#input1{
+    background-color: var(--accent);
+}
+#input1:focus{
+    box-shadow: 0px 0px 10px 2px hsla(135, 51%, 69%, 0.674);
 }
 #data div{
     height: 100%;
@@ -174,4 +148,65 @@ body{
     color: var(--main);
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
+}
+.recipe-card{
+    background-color: var(--accent);
+}
+.selection-color{
+    color: var(--main);
+}
+.modal-footer button{
+    background-color: var(--background) !important;
+    color: var(--accent) !important;
+    border: none;
+}
+#exampleModalLabel{
+    color: var(--main-dark);
+    font-weight: 600;
+}
+.modal-footer button:hover{
+    background-color: var(--background-dark) !important;
+}
+.modal-body ul li{
+    position: relative;
+    list-style: none;
+}
+.modal-body ul li::before{
+    content: "";
+    position: absolute;
+    background-color: var(--background);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    left: -16px;
+    top: 55%;
+    transform: translateY(-55%);
+}
+
+/* mobile  */
+@media only screen and (max-width: 768px) {
+    .nav-link::after ,
+    .nav-link::before{
+        left: 5%;
+    }
+    .nav-link::after{
+        transform: translate(-5%,100%);
+    }
+    .nav-link::before{
+        transform: translate(-5%,-100%);
+    }
+}
+/* tablate */
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    .nav-link::after ,
+    .nav-link::before{
+        left: 3%;
+    }
+    .nav-link::after{
+        transform: translate(-3%,100%);
+    }
+    .nav-link::before{
+        transform: translate(-3%,-100%);
+    }
 }
