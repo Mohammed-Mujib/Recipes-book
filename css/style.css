@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --background:#f77e5e;
+    --background-light:hsl(13, 91%, 77%);
+    --background-dark:hsl(13, 91%, 57%);
+    --main:#3dbd5d;
+    --main-light:hsl(135, 51%, 59%);
+    --main-dark:hsl(135, 51%, 39%);
+    --text:#303030;
+    --text-light:hsl(0, 0%, 29%);
+    --text-dark:hsl(0, 0%, 9%);
+    --accent:#f4f4f4;
+    --accent-light:hsl(0, 0%, 100%);
+    --accent-dark:hsl(0, 0%, 86%);
+}
+body{
+    background-color: var(--background);
+    font-family: "Lato", sans-serif;
+}
+
+.navbar{
+    background-color: var(--accent);
+    overflow: hidden;
+}
+.navbar-brand{
+    color: var(--text);
+}
+.navbar *::selection{
+    color: var(--accent);
+    background-color: var(--main);
+}
+.nav-item{
+    overflow: hidden;
+}
+.nav-link{
+    position: relative ;
+}
+.nav-link:hover {
+    color: var(--main);
+}
+/* .nav-link::after{
+    content: "";
+    transition: .3s;
+    border-top: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-right: 8px solid  transparent;
+    border-bottom: 8px solid var(--main);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,100%);
+}
+.nav-link::before{
+    content: "";
+    transition: .3s;
+    border-top: 8px solid var(--main);
+    border-left: 8px solid transparent;
+    border-right: 8px solid  transparent;
+    border-bottom: 8px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-100%);
+} */
+.nav-link::after ,
+.nav-link::before{
+    content: "";
+    transition: .3s;
+    border-left: 8px solid transparent;
+    border-right: 8px solid  transparent;
+    position: absolute;
+    left: 50%;
+}
+.nav-link::after{
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid var(--main);
+    bottom: 0;
+    transform: translate(-50%,100%);
+}
+.nav-link::before{
+    border-top: 8px solid var(--main);
+    border-bottom: 8px solid transparent;
+    top: 0;
+    transform: translate(-50%,-100%);
+}
+.nav-link:hover.nav-link::after,.nav-link:hover.nav-link::before{
+    transform: translate(-50%,0%);
+}
+/* .nav-link:hover.nav-link::before{
+    transform: translate(-50%,0%);
+} */
+.pannar .text-head *::selection{
+    background-color: var(--main);
+}
+.pannar .text-head {
+    color: var(--accent);
+}
+.pannar .text-head h1{
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.search-form{
+    max-width: 600px;
+    background-color: var(--accent);
+    position: relative;
+}
+.search-form button{
+    border-color: var(--main);
+    color: var(--main);
+}
+.search-form button:hover{
+    background-color: var(--main);
+    color: var(--accent);
+    border-color:var(--main) ;
+}
+.search{
+    position: absolute;
+    /* bottom: -60%; */
+    top: 100%;
+    left: 50%;
+    width: 90%;
+    /* background-color: var(--accent); */
+    
+    transform: translate(-50%);
+}
+#searchWords{
+    max-height: 300px;
+    background-color: var(--accent);
+    /* border: 2px solid var(--text-light); */
+    box-shadow: 0px 0px 30px 0px hsla(0, 0%, 53%, 0.756);
+}
+#searchWords li{
+    cursor: pointer;
+    border-bottom: 1px solid var(--accent-dark);
+    transition: .2s;
+}
+#searchWords li:hover{
+    /* cursor: pointer; */
+    color: var(--main);
+    padding-left: 30px !important;
+    /* border-bottom: 1px solid var(--accent-dark); */
+}
+
+.row .img-holder {
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden !important;
+}
+.row div img{
+    width: 100%;
+}
+.error{
+    border-radius: 25px !important;
+    padding: 10px 20px !important;
+    background-color:#ffcc99 !important ;
+    /* color:#FF7629 !important; */
+    color: var(--text);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 80% !important;
+    transform: translate(-50%);
+}
+#data div{
+    height: 100%;
+}
+#data h2{
+    color: var(--main);
+    font-size: 20px;
+    font-weight: 600;
+}
